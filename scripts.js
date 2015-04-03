@@ -12,11 +12,29 @@ var colors = ["red", "orange", "yellow", "navy", "blue", "white", "yellow", "ora
 	});
 });*/
 
+
+var container = $('<div id="square-holder" />');
+for(var a = 0; a<14; a++) {
+	var row = $('<div id="square-row" />');
+	for(var i = 1; i <= 20; i++) {
+	    $('<square />', {
+	        id: i,
+	    }).appendTo(row);
+	}
+	row.appendTo(container)
+	
+}
+$('#boxes-here').html(container);
+
 $("square").each(function() {
 	var random = Math.floor(Math.random() * (9));
 	var color = colors[random];
 	var currentSquare = $(this);
 	currentSquare.addClass(color);
+});
+
+$("#start").click(function() {
+	$("#start").hide();
 });
 
 $(window).scroll(function() {
