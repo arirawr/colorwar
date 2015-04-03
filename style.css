@@ -99,6 +99,11 @@ square {
 	-webkit-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
 	text-align: center;
+	color: white;
+}
+
+#background-content p {
+	font-size: 5vw;
 }
 
 #background-content h1 {
