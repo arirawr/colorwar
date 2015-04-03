@@ -52,6 +52,10 @@ $("#justcolours").click(function() {
 	interval = setInterval(function () {iteratenonstop()}, 300);
 });
 
+$('#restart').click(function() {
+    location.reload();
+});
+
 function iterate() {
 	$("square").each(function() {
 		if(!correct($(this))) 

@@ -20,6 +20,22 @@ body {
 	z-index: 20;
 }
 
+#restart {
+	position: fixed;
+	bottom: 0;
+	left: 10px;
+	z-index: 20;
+	border: none;
+	font-size: 20px;
+	background-color: white;
+	color: #1A2E33;
+	border: 2px solid #1A2E33;
+	border-radius: 8px;
+	padding: 5px 10px;
+	cursor: pointer;
+	font-family: "Shadows Into Light Two";
+}
+
 #start {
 	border: none;
 	width: 200px;
