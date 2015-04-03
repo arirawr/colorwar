@@ -68,6 +68,7 @@ function iterate() {
 		$("square").each(function() {
 			$(this).fadeOut(1000);
 		});
+		$("#background-content").show(1000);
 	}
 }
 
