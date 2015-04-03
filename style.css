@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans Narrow";
+  color: #222;
+  background-color: #222;
+  padding: 0;
+  margin: 0;
+  transition: background-color 500ms linear;
+}
+
+#social {
+	position: fixed;
+	bottom: 0;
+	right: -80px;
+}
+
+#start {
+	border: none;
+	width: 200px;
+	height: 100px;
+	font-size: 50px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	color: #1A2E33;
+	border: 2px solid #1A2E33;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.square-holder {
+	width: 100vw;
+	height: 100vh;
+}
+
+.square-row {
+	width: 100%;
+	display: flex;
+}
+
+square {
+	display: inline-block;
+	width: 10%;
+	padding-top: 10%;
+	margin: 0;
+}
+
+.white {
+	background-color: white;
+ 	transition: background-color 500ms linear;
+}
+
+.blue {
+	background-color: #CBF2FF;
+ 	transition: background-color 500ms linear;
+}
+
+.yellow {
+	background-color: #FFEF40;
+	transition: background-color 500ms linear;
+}
+
+.orange {
+	background-color: #FFAF40;
+	transition: background-color 500ms linear;
+}
+
+.navy {
+	background-color: #1A2E33;
+	transition: background-color 500ms linear;
+}
+
+.red {
+	background-color: #FF4046;
+	transition: background-color 500ms linear;
+}
+
+
+
+
+@media screen and (max-width: 960px) {
+
+}
