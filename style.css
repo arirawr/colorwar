@@ -67,8 +67,13 @@ square {
 	transition: background-color 500ms linear;
 }
 
-.orange {
+.gold {
 	background-color: #FFAF40;
+	transition: background-color 500ms linear;
+}
+
+.orange {
+	background-color: #FF7040;
 	transition: background-color 500ms linear;
 }
 
