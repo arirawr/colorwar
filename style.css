@@ -25,18 +25,34 @@ body {
 	width: 200px;
 	height: 100px;
 	font-size: 50px;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
 	background-color: white;
 	color: #1A2E33;
 	border: 2px solid #1A2E33;
 	border-radius: 8px;
 	cursor: pointer;
-	z-index: 20;
 	font-family: "Shadows Into Light Two";
+	margin-bottom: 10px;
+}
+
+#justcolours {
+	border: none;
+	font-size: 20px;
+	background-color: white;
+	color: #1A2E33;
+	border: 2px solid #1A2E33;
+	border-radius: 8px;
+	cursor: pointer;
+	font-family: "Shadows Into Light Two";
+}
+
+#buttons {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	    	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 20;
 }
 
 .square-holder {

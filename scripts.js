@@ -43,12 +43,13 @@ $("square").each(function() {
 });
 
 $("#start").click(function() {
-	$("#start").hide();
+	$("#buttons").hide();
 	interval = setInterval(function () {iterate()}, 300);
 });
 
-$("#startagain").click(function() {
-	interval = setInterval(function () {iterate()}, 300);
+$("#justcolours").click(function() {
+	$("#buttons").hide();
+	interval = setInterval(function () {iteratenonstop()}, 300);
 });
 
 function iterate() {
@@ -64,6 +65,12 @@ function iterate() {
 			$(this).fadeOut(1000);
 		});
 	}
+}
+
+function iteratenonstop() {
+	$("square").each(function() {
+		swap($(this));
+	});
 }
 
 function checkCorrect() {
