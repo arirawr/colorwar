@@ -19,6 +19,7 @@ var whiteSquares = ["149", "169", "170"];
 	});
 });*/
 
+var interval = null;
 
 var container = $('<div class="square-holder" />');
 var idnum = 0;
@@ -43,7 +44,11 @@ $("square").each(function() {
 
 $("#start").click(function() {
 	$("#start").hide();
-	window.setInterval(function () {iterate()}, 300)
+	interval = setInterval(function () {iterate()}, 300);
+});
+
+$("#startagain").click(function() {
+	interval = setInterval(function () {iterate()}, 300);
 });
 
 function iterate() {
@@ -53,6 +58,68 @@ function iterate() {
 			swap($(this));
 		}
 	});
+	if(checkCorrect()) {
+		clearInterval(interval);
+		$("square").each(function() {
+			$(this).fadeOut(1000);
+		});
+	}
+}
+
+function checkCorrect() {
+	var flag = 0;
+	$('square').each(function() {
+		var thesquare = $(this);
+		if(redSquares.indexOf(thesquare.attr('id')) > -1) {
+			if(thesquare.hasClass("red")) {
+			}
+			else {
+				flag++;
+			}
+		}
+		else if(orangeSquares.indexOf(thesquare.attr('id')) > -1) {
+			if(thesquare.hasClass("orange")) {
+			}
+			else {
+				flag++;
+			}
+		}
+		else if(goldSquares.indexOf(thesquare.attr('id')) > -1) {
+			if(thesquare.hasClass("gold")) {
+			}
+			else {
+				flag++;
+			}
+		}
+		else if(yellowSquares.indexOf(thesquare.attr('id')) > -1) {
+			if(thesquare.hasClass("yellow")) {
+			}
+			else {
+				flag++;
+			}
+		}
+		else if(whiteSquares.indexOf(thesquare.attr('id')) > -1) {
+			if(thesquare.hasClass("white")) {
+			}
+			else {
+				flag++;
+			}
+		}
+		else {
+			if(thesquare.hasClass("blue")) {
+			}
+			else {
+				flag++;
+			}
+		}
+	});
+
+	if(flag>0) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 function correct(thesquare) {
@@ -113,70 +180,3 @@ function swap(thesquare) {
 	var color = colors[random];
 	thesquare.addClass(color);
 }
-
-$(window).scroll(function() {
-  	$("body").addClass("light");
-	$("#hidden").addClass("red");
-});
-
-$("#section3").click(function() {
-	$('html, body').animate({
-        scrollTop:$('#section4').offset().top
-    }, 500);
-});
-
-$(".center-button").click(function() {
-	$(".center-button").addClass("active");
-	$(".left-button").removeClass("active");
-	$(".right-button").removeClass("active");
-	$("#screenshot1").hide();
-	$("#screenshot2").show();
-	$("#screenshot3").hide();
-});
-
-$(".left-button").click(function() {
-	$(".center-button").removeClass("active");
-	$(".left-button").addClass("active");
-	$(".right-button").removeClass("active");
-	$("#screenshot1").show();
-	$("#screenshot2").hide();
-	$("#screenshot3").hide();
-});
-
-$(".right-button").click(function() {
-	$(".center-button").removeClass("active");
-	$(".left-button").removeClass("active");
-	$(".right-button").addClass("active");
-	$("#screenshot1").hide();
-	$("#screenshot2").hide();
-	$("#screenshot3").show();
-});
-
-$("#beta-interest").submit(function(event) {
-	$("#beta-full, #beta-full *, #pop-up-overlay").show(500);
-	event.preventDefault(); 
-	$("#full-email").val($("#interest-email").val());
-});
-
-$("#pop-up-overlay").click(function() {
-	$("#beta-full, #pop-up-overlay").hide(500);
-});
-
-$("#beta-full").submit(function(event) {
-	event.preventDefault(); 
-	Parse.initialize("VZnzhx2yDi4XARcEY8FrT7cYzJPRdG9UJNwA4Xef", "z8ULgqRkygDY5uUvClqZhay5FOnwXrdBnnanK3xg");
-	var betaUser = Parse.Object.extend("BetaInterest");
-	var betaUser = new betaUser();
-	betaUser.set({
-		"name": $("input[name='name']").val(),
-		"email": $("input[name='email']").val(),
-		"event": $("input[name='event']").val(),
-		"date": $("input[name='date']").val(),
-		"website": $("input[name='site']").val(),
-		"hackers": $("input[name='hackers']").val(),
-	});
-	betaUser.save().then(function(object) {
-	  alert("Thank you for your interest! The HackSignal team will be in touch soon.");
-	});
-	$("#beta-full, #pop-up-overlay").hide(500);
-});
